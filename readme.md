@@ -25,13 +25,13 @@ cd yt-playlist-downloader
 Create a new virtual environment (never copy the one from the original machine):
 
 ```bash
-python3 -m venv venv
+python3 -m venv .venv
 ```
 
 or Windows:
 
 ```bash
-py -m venv venv
+py -m venv .venv
 ```
 
 ---
@@ -41,13 +41,13 @@ py -m venv venv
 **macOS/Linux:**
 
 ```bash
-source venv/bin/activate
+source .venv/bin/activate
 ```
 
 **Windows (cmd):**
 
 ```bash
-venv\Scripts\activate
+.venv\Scripts\activate
 ```
 
 **Windows (PowerShell):**
