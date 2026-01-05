@@ -34,7 +34,7 @@ def download_mp3(url: str, title: str):
             {
                 "key": "FFmpegExtractAudio",
                 "preferredcodec": "mp3",
-                "preferredquality": "128",
+                "preferredquality": "192",
             }
         ],
         "quiet": False,
