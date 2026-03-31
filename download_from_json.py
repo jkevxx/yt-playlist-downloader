@@ -23,9 +23,12 @@ def load_json(filepath: str) -> dict:
         sys.exit(f"ERROR: Invalid JSON format → {filepath}")
 
 
-def download_mp3(url: str, title: str):
+def download_mp3(url: str, title: str, count: int):
     """Download a YouTube video as MP3 using yt_dlp"""
-    outtmpl = os.path.join(DOWNLOADS_DIR, "%(title)s.%(ext)s")
+
+    filename_template = f"{count}-%(title)s.%(ext)s"
+
+    outtmpl = os.path.join(DOWNLOADS_DIR, filename_template)
 
     ydl_opts = {
         "format": "bestaudio/best",
@@ -63,15 +66,16 @@ def download_all_videos(json_path: str):
     print(f"Videos to download: {len(videos)}")
     print("-" * 50)
 
+    count = 0
     for video in videos:
         url = video.get("url")
         title = video.get("title")
-
+        count = count + 1
         if not url:
             print("Skipping video with missing URL")
             continue
 
-        download_mp3(url, title)
+        download_mp3(url, title, count)
 
     print("\nAll downloads finished!")
 
