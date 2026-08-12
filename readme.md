@@ -81,3 +81,9 @@ or:
 # Download music from JSON file
 python download_from_json.py.py
 ```
+
+## 6. Upgrade Library
+
+```bash
+pip3 install --upgrade certifi charset-normalizer idna mutagen websockets yt-dlp
+```
